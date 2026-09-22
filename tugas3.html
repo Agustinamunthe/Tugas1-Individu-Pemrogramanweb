@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', serif;
+        }
+        .container{
+            width: 600px;
+            margin: 50px auto;
+            border: 1px solid black;
+            padding: 20px;
+        }
+        table{
+            width: 100%;
+        }
+        input[type="number"],
+        input[type="text"]{
+            width: 100%;
+            padding: 8px;
+        }
+        button{
+            width: 50px;
+            height: 40px;
+            font-size: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>Input bilangan 1</td>
+                <td><input type="number" id="bil1"></td>
+            </tr>
+            <tr>
+                <td>Input bilangan 2</td>
+                <td><input type="number" id="bil2"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button 
+                    onclick="hitung('+')">+</button>
+                    <button
+                    onclick="hitung('-')">-</button>
+                    <button
+                    onclick="hitung('*')">*</button>
+                    <button
+                    onclick="hitung('/')">/</button>
+                </td>
+            
+            </tr>
+            <tr>
+                <td>Output</td>
+                <td><input type="text" id="hasil" readonly></td>
+
+            </tr>
+        </table>
+    </div>
+    <script>
+        function hitung(operator){
+            let a = parseFloat(document.getElementById("bil1").value);
+            let b = parseFloat(document.getElementById("bil2").value);
+            let hasil;
+
+            if(operator == '+'){
+                hasil = a+b;
+            }
+            if(operator == '-'){
+                hasil = a-b;
+            }
+            if(operator == '*'){
+                hasil = a*b;
+            }
+            if(operator == '/'){
+                hasil = a/b;
+            }
+        document.getElementById("hasil").value = hasil;
+        }
+    </script>
+</body>
+</html>
